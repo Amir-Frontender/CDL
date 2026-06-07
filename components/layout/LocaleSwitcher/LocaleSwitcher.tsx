@@ -6,6 +6,7 @@ import styles from "./LocaleSwitcher.module.css";
 
 type LocaleSwitcherProps = {
   locale: Locale;
+  cursorLabel?: string;
 };
 
 const switcherLocales: Array<{ value: Locale; label: string }> = [
@@ -14,7 +15,7 @@ const switcherLocales: Array<{ value: Locale; label: string }> = [
   { value: "uz", label: "UZ" },
 ];
 
-export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
+export function LocaleSwitcher({ locale, cursorLabel }: LocaleSwitcherProps) {
   const router = useRouter();
 
   function changeLocale(nextLocale: Locale) {
@@ -34,6 +35,7 @@ export function LocaleSwitcher({ locale }: LocaleSwitcherProps) {
           key={item.value}
           type="button"
           onClick={() => changeLocale(item.value)}
+          data-cursor-label={cursorLabel}
         >
           {item.label}
         </button>

@@ -31,6 +31,13 @@
     "close": "Close",
     "closeGallery": "Close gallery image"
   },
+  "cursor": {
+    "view": "View",
+    "open": "Open",
+    "explore": "Explore",
+    "contact": "Contact",
+    "drag": "Drag"
+  },
   "hero": {
     "eyebrow": "Premium Tableware & Vintage Collections",
     "title": "Casa di Lusso",

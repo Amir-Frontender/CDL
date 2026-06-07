@@ -19,7 +19,14 @@ export function CollectionsSection({ t }: { t: Messages }) {
           const content = t.collections.items[item.id];
           return (
             <AnimatedSection className={styles.card} key={item.id}>
-              <a href={item.href} target="_blank" rel="noreferrer" aria-label={content.title}>
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={content.title}
+                data-cursor="card"
+                data-cursor-label={t.cursor.explore}
+              >
                 <div className={styles.image}>
                   <Image
                     src={item.image}
