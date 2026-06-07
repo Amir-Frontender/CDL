@@ -10,7 +10,7 @@ export const ogContentType = "image/png";
 export const ogImageAsset = "/images/hero-service.jpg";
 
 export function getLocalizedOgImagePath(locale: Locale) {
-  return `/${locale}/opengraph-image`;
+  return `/og/${locale}.png`;
 }
 
 export function getAbsoluteOgImageUrl(locale: Locale) {
