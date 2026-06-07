@@ -4,6 +4,12 @@
     "description": "Curated luxury tableware, premium porcelain, European brands and exclusive vintage pieces for elegant living.",
     "ogAlt": "Casa di Lusso premium table setting"
   },
+  "og": {
+    "title": "Casa di Lusso",
+    "subtitle": "Premium Tableware & Vintage Collections",
+    "tagline": "Curated luxury tableware for elegant living.",
+    "alt": "Casa di Lusso premium tableware social preview"
+  },
   "brand": {
     "name": "Casa di Lusso"
   },

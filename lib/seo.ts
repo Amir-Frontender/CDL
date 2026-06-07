@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import type { Locale, Messages } from "@/lib/i18n";
-
-export const siteUrl = "https://casadilusso.uz";
+import { getAbsoluteOgImageUrl, ogSize } from "@/lib/og";
+import { siteUrl } from "@/lib/site";
 
 export function buildMetadata(locale: Locale, t: Messages): Metadata {
+  const ogImageUrl = getAbsoluteOgImageUrl(locale);
+
   return {
     metadataBase: new URL(siteUrl),
     title: {
@@ -42,10 +44,10 @@ export function buildMetadata(locale: Locale, t: Messages): Metadata {
       description: t.metadata.description,
       images: [
         {
-          url: "/images/hero-service.jpg",
-          width: 1200,
-          height: 630,
-          alt: t.metadata.ogAlt,
+          url: ogImageUrl,
+          width: ogSize.width,
+          height: ogSize.height,
+          alt: t.og.alt,
         },
       ],
     },
@@ -53,7 +55,12 @@ export function buildMetadata(locale: Locale, t: Messages): Metadata {
       card: "summary_large_image",
       title: t.metadata.title,
       description: t.metadata.description,
-      images: ["/images/hero-service.jpg"],
+      images: [
+        {
+          url: ogImageUrl,
+          alt: t.og.alt,
+        },
+      ],
     },
     robots: {
       index: true,
@@ -74,7 +81,7 @@ export function buildStructuredData(t: Messages) {
     "@type": "Store",
     name: t.brand.name,
     url: siteUrl,
-    image: `${siteUrl}/images/hero-service.jpg`,
+    image: getAbsoluteOgImageUrl("ru"),
     description: t.metadata.description,
     brand: {
       "@type": "Brand",
