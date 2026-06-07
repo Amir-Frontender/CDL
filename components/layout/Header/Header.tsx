@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Send } from "lucide-react";
-import { localeLabels, locales, type Locale, type Messages } from "@/lib/i18n";
+import type { Locale, Messages } from "@/lib/i18n";
 import { navigationItems } from "@/data/navigation";
 import { orderHref } from "@/lib/links";
+import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher/LocaleSwitcher";
 import styles from "./Header.module.css";
 
 type HeaderProps = {
@@ -27,13 +28,7 @@ export function Header({ locale, t }: HeaderProps) {
         ))}
       </nav>
 
-      <div className={styles.localeSwitcher} aria-label="Language switcher">
-        {locales.map((item) => (
-          <Link className={locale === item ? styles.active : ""} href={`/${item}`} key={item}>
-            {localeLabels[item]}
-          </Link>
-        ))}
-      </div>
+      <LocaleSwitcher locale={locale} />
 
       <a className={styles.action} href={orderHref(locale)} target="_blank" rel="noreferrer" aria-label={t.actions.telegram}>
         <Send size={16} />

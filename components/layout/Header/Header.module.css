@@ -17,8 +17,7 @@
 }
 
 .brand,
-.action,
-.localeSwitcher {
+.action {
   display: flex;
   align-items: center;
 }
@@ -48,8 +47,7 @@
 }
 
 .nav a,
-.action,
-.localeSwitcher a {
+.action {
   transition: 0.4s ease;
 }
 
@@ -73,30 +71,6 @@
 .action:hover {
   border-color: var(--gold);
   background: rgba(185, 154, 91, 0.14);
-}
-
-.localeSwitcher {
-  gap: 3px;
-  margin-right: 10px;
-  padding: 3px;
-  border: 1px solid rgba(255, 250, 242, 0.28);
-}
-
-.localeSwitcher a {
-  display: grid;
-  width: 38px;
-  height: 34px;
-  place-items: center;
-  color: rgba(255, 250, 242, 0.68);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.localeSwitcher a:hover,
-.localeSwitcher .active {
-  background: var(--gold);
-  color: var(--text);
 }
 
 @media (max-width: 860px) {
@@ -124,20 +98,6 @@
 
   .brand span {
     display: none;
-  }
-
-  .localeSwitcher {
-    display: grid;
-    grid-template-columns: repeat(3, 30px);
-    width: 98px;
-    margin: 0;
-    overflow: hidden;
-  }
-
-  .localeSwitcher a {
-    width: 30px;
-    height: 32px;
-    font-size: 11px;
   }
 
   .action {

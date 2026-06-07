@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { featuredBrands } from "@/data/brands";
 import type { Messages } from "@/lib/i18n";
 import { AnimatedSection } from "@/components/ui/AnimatedSection/AnimatedSection";
@@ -8,10 +9,14 @@ export function FeaturedBrandsSection({ t }: { t: Messages }) {
     <AnimatedSection className={`${styles.logoWall} section`}>
       <p className="eyebrow">{t.brands.eyebrow}</p>
       <h2>{t.brands.title}</h2>
-      <div className={styles.wall} aria-label={t.brands.eyebrow}>
-        {featuredBrands.map((brand) => (
-          <span key={brand}>{brand}</span>
-        ))}
+      <div className={styles.carousel} aria-label={t.brands.eyebrow}>
+        <div className={styles.track}>
+          {[...featuredBrands, ...featuredBrands].map((brand, index) => (
+            <div className={styles.logoCard} key={`${brand.name}-${index}`} aria-hidden={index >= featuredBrands.length}>
+              <Image src={brand.logo} alt={index < featuredBrands.length ? brand.name : ""} width={220} height={74} />
+            </div>
+          ))}
+        </div>
       </div>
     </AnimatedSection>
   );
