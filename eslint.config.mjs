@@ -11,6 +11,13 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    "node_modules/**",
+    ".chrome-*/**",
+    "pdf-extracted/**",
+    "check-*.png",
+    "mobile-*.png",
+    "ios-pdf*.png",
+    "pdf-image-*.png",
     "next-env.d.ts",
   ]),
 ]);

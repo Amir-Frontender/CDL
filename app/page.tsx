@@ -431,6 +431,9 @@ export default function Home() {
           </a>
         </div>
       </footer>
+      <a className="back-to-top" href="#top" aria-label="Scroll to top">
+        ↑
+      </a>
     </main>
   );
 }

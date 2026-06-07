@@ -44,3 +44,6 @@ next-env.d.ts
 .chrome-*/
 check-*.png
 mobile-*.png
+ios-pdf*.png
+pdf-image-*.png
+pdf-extracted/
