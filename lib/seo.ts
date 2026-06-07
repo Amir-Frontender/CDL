@@ -45,6 +45,7 @@ export function buildMetadata(locale: Locale, t: Messages): Metadata {
       images: [
         {
           url: ogImageUrl,
+          secureUrl: ogImageUrl,
           width: ogSize.width,
           height: ogSize.height,
           type: "image/jpeg",

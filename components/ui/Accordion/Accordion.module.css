@@ -40,14 +40,17 @@
   grid-template-rows: 0fr;
   max-width: 760px;
   opacity: 0;
+  overflow: hidden;
   transition:
-    grid-template-rows 0.45s ease,
+    grid-template-rows 0.52s cubic-bezier(0.22, 1, 0.36, 1),
     opacity 0.35s ease;
 }
 
 .answerInner {
   min-height: 0;
   overflow: hidden;
+  padding-bottom: 0;
+  transition: padding-bottom 0.52s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .expanded {

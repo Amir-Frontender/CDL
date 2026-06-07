@@ -12,6 +12,12 @@ export type AccordionItem = {
 export function Accordion({ items }: { items: AccordionItem[] }) {
   const [open, setOpen] = useState(0);
 
+  function toggle(index: number) {
+    setOpen(open === index ? -1 : index);
+    window.dispatchEvent(new Event("cdl:layout-shift"));
+    window.setTimeout(() => window.dispatchEvent(new Event("cdl:layout-shift")), 460);
+  }
+
   return (
     <div className={styles.list}>
       {items.map((item, index) => (
@@ -19,7 +25,7 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
           <button
             aria-expanded={open === index}
             aria-controls={`faq-${index}`}
-            onClick={() => setOpen(open === index ? -1 : index)}
+            onClick={() => toggle(index)}
             type="button"
           >
             <span>{item.question}</span>
