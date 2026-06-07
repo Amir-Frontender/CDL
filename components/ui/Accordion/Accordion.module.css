@@ -36,6 +36,29 @@
 }
 
 .answer {
+  display: grid;
+  grid-template-rows: 0fr;
   max-width: 760px;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.45s ease,
+    opacity 0.35s ease;
+}
+
+.answerInner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.expanded {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.expanded .answerInner {
   padding-bottom: 28px;
+}
+
+.answer p {
+  margin: 0;
 }

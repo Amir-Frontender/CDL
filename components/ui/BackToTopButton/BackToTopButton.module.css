@@ -1,0 +1,30 @@
+.button {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 48;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 13px;
+  border: 1px solid rgba(185, 154, 91, 0.5);
+  background: rgba(15, 14, 12, 0.78);
+  color: var(--ivory);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 16px 34px rgba(15, 14, 12, 0.18);
+}
+
+.button svg {
+  color: var(--gold);
+}
+
+@media (max-width: 620px) {
+  .button {
+    display: inline-flex;
+  }
+}

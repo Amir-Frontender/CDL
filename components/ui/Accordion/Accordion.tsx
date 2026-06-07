@@ -25,8 +25,14 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
             <span>{item.question}</span>
             <ChevronDown aria-hidden className={open === index ? styles.open : ""} />
           </button>
-          <div className={styles.answer} id={`faq-${index}`} hidden={open !== index}>
-            <p>{item.answer}</p>
+          <div
+            className={`${styles.answer} ${open === index ? styles.expanded : ""}`}
+            id={`faq-${index}`}
+            aria-hidden={open !== index}
+          >
+            <div className={styles.answerInner}>
+              <p>{item.answer}</p>
+            </div>
           </div>
         </article>
       ))}

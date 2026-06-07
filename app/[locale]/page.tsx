@@ -15,6 +15,7 @@ import { StatsSection } from "@/components/sections/StatsSection/StatsSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection/TestimonialsSection";
 import { FAQSection } from "@/components/sections/FAQSection/FAQSection";
 import { ContactSection } from "@/components/sections/ContactSection/ContactSection";
+import { BackToTopButton } from "@/components/ui/BackToTopButton/BackToTopButton";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -50,6 +51,7 @@ export default async function HomePage({ params }: PageProps) {
         <ContactSection t={t} />
       </main>
       <Footer locale={activeLocale} t={t} />
+      <BackToTopButton label={t.actions.backToTop} />
     </>
   );
 }

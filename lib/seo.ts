@@ -47,6 +47,7 @@ export function buildMetadata(locale: Locale, t: Messages): Metadata {
           url: ogImageUrl,
           width: ogSize.width,
           height: ogSize.height,
+          type: "image/jpeg",
           alt: t.og.alt,
         },
       ],

@@ -30,15 +30,19 @@ export function Footer({ locale, t }: FooterProps) {
       <div className={styles.social}>
         <a href={telegramMain} target="_blank" rel="noreferrer" aria-label={t.actions.telegram}>
           <Send size={18} />
+          <span>{t.actions.telegram}</span>
         </a>
         <a href={instagram} target="_blank" rel="noreferrer" aria-label={t.actions.instagram}>
           <Camera size={18} />
+          <span>{t.actions.instagram}</span>
         </a>
         <a href={telegramVintage} target="_blank" rel="noreferrer" aria-label={t.actions.vintageTelegram}>
           <Gem size={18} />
+          <span>{t.actions.vintageTelegram}</span>
         </a>
         <a href={whatsapp} target="_blank" rel="noreferrer" aria-label={t.actions.whatsapp}>
           <MessageCircle size={18} />
+          <span>{t.actions.whatsapp}</span>
         </a>
       </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { galleryItems } from "@/data/gallery";
 import type { Messages } from "@/lib/i18n";
@@ -11,6 +11,20 @@ import styles from "./GallerySection.module.css";
 
 export function GallerySection({ t }: { t: Messages }) {
   const [lightbox, setLightbox] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (lightbox === null) return;
+
+    const bodyOverflow = document.body.style.overflow;
+    const htmlOverflow = document.documentElement.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = bodyOverflow;
+      document.documentElement.style.overflow = htmlOverflow;
+    };
+  }, [lightbox]);
 
   return (
     <section className={`${styles.gallerySection} section`} id="gallery">
