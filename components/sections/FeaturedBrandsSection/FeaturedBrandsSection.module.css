@@ -43,11 +43,13 @@
 }
 
 .logoCard img {
-  width: min(72%, 230px);
+  width: auto;
+  max-width: min(74%, 245px);
   height: auto;
+  max-height: 76px;
   object-fit: contain;
-  opacity: 0.78;
-  filter: sepia(0.2) saturate(0.85) contrast(0.94);
+  opacity: 0.82;
+  filter: sepia(0.12) saturate(0.9) contrast(0.98);
   transition: 0.4s ease;
 }
 

@@ -13,7 +13,12 @@ export function FeaturedBrandsSection({ t }: { t: Messages }) {
         <div className={styles.track}>
           {[...featuredBrands, ...featuredBrands].map((brand, index) => (
             <div className={styles.logoCard} key={`${brand.name}-${index}`} aria-hidden={index >= featuredBrands.length}>
-              <Image src={brand.logo} alt={index < featuredBrands.length ? brand.name : ""} width={220} height={74} />
+              <Image
+                src={brand.logo}
+                alt={index < featuredBrands.length ? brand.name : ""}
+                width={brand.width}
+                height={brand.height}
+              />
             </div>
           ))}
         </div>
