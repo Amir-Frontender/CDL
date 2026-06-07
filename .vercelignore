@@ -1,0 +1,6 @@
+.chrome-*/
+check-*.png
+mobile-*.png
+node_modules/
+.next/
+coverage/
