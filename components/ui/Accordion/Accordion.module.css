@@ -1,0 +1,41 @@
+.list {
+  border-top: 1px solid var(--line);
+}
+
+.item {
+  border-bottom: 1px solid var(--line);
+}
+
+.item button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 88px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.item button span {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(25px, 3vw, 38px);
+}
+
+.item svg {
+  flex: 0 0 auto;
+  color: var(--gold);
+  transition: 0.4s ease;
+}
+
+.open {
+  transform: rotate(180deg);
+}
+
+.answer {
+  max-width: 760px;
+  padding-bottom: 28px;
+}

@@ -1,0 +1,47 @@
+.trust {
+  background: var(--text);
+  color: var(--ivory);
+}
+
+.trust h2 {
+  color: var(--ivory);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(255, 250, 242, 0.16);
+}
+
+.item {
+  display: grid;
+  min-height: 170px;
+  align-content: space-between;
+  padding: 26px;
+  background: var(--text);
+  color: var(--ivory);
+}
+
+.item svg {
+  color: var(--gold);
+  stroke-width: 1.4;
+}
+
+.item span {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(21px, 2vw, 28px);
+  line-height: 1.12;
+}
+
+@media (max-width: 1080px) {
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}

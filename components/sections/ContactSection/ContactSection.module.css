@@ -1,0 +1,65 @@
+.contact {
+  display: grid;
+  min-height: 72vh;
+  place-items: center;
+  background:
+    linear-gradient(rgba(15, 14, 12, 0.76), rgba(15, 14, 12, 0.76)),
+    url("/images/vintage-green-table.jpg") center / cover fixed;
+  color: var(--ivory);
+  text-align: center;
+}
+
+.contact h2 {
+  max-width: 870px;
+  margin-inline: auto;
+  color: var(--ivory);
+}
+
+.contact p {
+  max-width: 720px;
+  margin-inline: auto;
+  color: rgba(255, 250, 242, 0.76);
+  font-size: clamp(17px, 1.6vw, 20px);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 168px;
+  min-height: 56px;
+  border: 1px solid rgba(255, 250, 242, 0.32);
+  color: var(--ivory);
+  transition: 0.4s ease;
+}
+
+.actions svg {
+  width: 19px;
+  height: 19px;
+  stroke-width: 1.6;
+}
+
+.actions a:hover {
+  border-color: var(--gold);
+  background: rgba(185, 154, 91, 0.16);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 620px) {
+  .contact {
+    background-attachment: scroll;
+  }
+
+  .actions a {
+    width: 100%;
+  }
+}

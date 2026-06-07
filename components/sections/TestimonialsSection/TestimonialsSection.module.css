@@ -1,0 +1,53 @@
+.testimonials {
+  overflow: hidden;
+}
+
+.swiper {
+  overflow: visible;
+  padding-bottom: 46px !important;
+}
+
+.card {
+  display: grid;
+  min-height: 330px;
+  padding: clamp(24px, 3vw, 38px);
+  border: 1px solid var(--line);
+  background: rgba(255, 250, 242, 0.68);
+}
+
+.card svg {
+  color: var(--gold);
+  stroke-width: 1.4;
+}
+
+.card p {
+  align-self: center;
+  color: var(--text);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(23px, 2vw, 31px);
+  line-height: 1.28;
+}
+
+.card strong,
+.card span {
+  display: block;
+}
+
+.card strong {
+  margin-bottom: 5px;
+}
+
+.card span {
+  color: var(--gray);
+}
+
+.swiper :global(.swiper-pagination-bullet) {
+  width: 28px !important;
+  height: 2px !important;
+  border-radius: 0 !important;
+  background: var(--gray) !important;
+}
+
+.swiper :global(.swiper-pagination-bullet-active) {
+  background: var(--gold) !important;
+}
