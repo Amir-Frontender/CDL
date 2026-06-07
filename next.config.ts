@@ -2,11 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   devIndicators: false,
+  trailingSlash: true,
   async redirects() {
     return [
       {
         source: "/",
-        destination: "/ru",
+        destination: "/ru/",
         permanent: false,
       },
     ];
