@@ -1,0 +1,50 @@
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+h1 {
+  max-width: 11ch;
+  margin-bottom: 22px;
+  color: var(--ivory);
+  font-size: clamp(62px, 10vw, 142px);
+  line-height: 0.88;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: clamp(38px, 6vw, 82px);
+  line-height: 0.98;
+}
+
+h3 {
+  font-size: clamp(24px, 2vw, 31px);
+  line-height: 1.1;
+}
+
+p {
+  color: var(--gray);
+  line-height: 1.72;
+}
+
+@media (max-width: 620px) {
+  h1 {
+    max-width: 8ch;
+    font-size: clamp(58px, 18vw, 82px);
+  }
+
+  h2 {
+    font-size: clamp(36px, 12vw, 54px);
+    line-height: 1;
+  }
+}

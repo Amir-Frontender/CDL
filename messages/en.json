@@ -1,0 +1,197 @@
+{
+  "metadata": {
+    "title": "Casa di Lusso | Premium Tableware & Vintage Collections",
+    "description": "Curated luxury tableware, premium porcelain, European brands and exclusive vintage pieces for elegant living.",
+    "ogAlt": "Casa di Lusso premium table setting"
+  },
+  "brand": {
+    "name": "Casa di Lusso"
+  },
+  "navigation": {
+    "collection": "Collection",
+    "why": "Why us",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "actions": {
+    "exploreCollection": "Explore Collection",
+    "contactUs": "Contact Us",
+    "viewDetails": "View details",
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "close": "Close",
+    "closeGallery": "Close gallery image"
+  },
+  "hero": {
+    "eyebrow": "Premium Tableware & Vintage Collections",
+    "title": "Casa di Lusso",
+    "lead": "Curated luxury tableware and timeless vintage pieces for elegant living.",
+    "scroll": "Scroll"
+  },
+  "story": {
+    "eyebrow": "Brand Philosophy",
+    "kicker": "European table culture, selected with restraint.",
+    "title": "Table Setting as an Art",
+    "body": "Casa di Lusso curates modern serving pieces, collectible porcelain and refined vintage finds for tables that feel personal, composed and quietly memorable.",
+    "note": "We sell the atmosphere around the table: proportion, texture, heritage and the small rituals that make a home feel collected."
+  },
+  "collections": {
+    "eyebrow": "The Collection",
+    "title": "Objects chosen for presence, balance and provenance.",
+    "body": "From contemporary glassware to rare porcelain services, every selection is treated like an interior detail: proportion, finish, color and atmosphere matter.",
+    "items": {
+      "coloredGlassware": {
+        "title": "Colored Glassware",
+        "meta": "Italian inspired table accents",
+        "price": "from 650,000 UZS"
+      },
+      "restaurantServing": {
+        "title": "Restaurant Serving",
+        "meta": "Professional hospitality pieces",
+        "price": "from 480,000 UZS"
+      },
+      "statementSetting": {
+        "title": "Statement Setting",
+        "meta": "Layered modern tableware",
+        "price": "from 520,000 UZS"
+      },
+      "modernCollections": {
+        "title": "Modern Collections",
+        "meta": "Refined daily rituals",
+        "price": "from 390,000 UZS"
+      },
+      "heritagePorcelain": {
+        "title": "Heritage Porcelain",
+        "meta": "Rare floral porcelain finds",
+        "price": "price on request"
+      },
+      "collectiblePlates": {
+        "title": "Collectible Plates",
+        "meta": "Decorative European classics",
+        "price": "price on request"
+      }
+    }
+  },
+  "why": {
+    "eyebrow": "Why Casa di Lusso",
+    "title": "Quiet luxury, handled with obsessive care.",
+    "items": {
+      "curated": {
+        "title": "Carefully Curated Collections",
+        "text": "Every piece is chosen for proportion, condition, finish and the way it lives on a table."
+      },
+      "vintage": {
+        "title": "Authentic Vintage Pieces",
+        "text": "Limited pieces with history, character and the quiet drama of proper table culture."
+      },
+      "brands": {
+        "title": "Premium European Brands",
+        "text": "Original tableware, glassware and porcelain from established European houses."
+      },
+      "delivery": {
+        "title": "Worldwide Delivery",
+        "text": "Careful packing and coordinated delivery across Uzbekistan, CIS and selected international routes."
+      }
+    }
+  },
+  "trust": {
+    "eyebrow": "Buyer Confidence",
+    "title": "Every fragile detail is treated seriously.",
+    "items": {
+      "authenticity": "Authenticity Guarantee",
+      "packaging": "Secure Packaging",
+      "shipping": "Worldwide Shipping",
+      "inspection": "Product Inspection",
+      "service": "Premium Customer Service"
+    }
+  },
+  "brands": {
+    "eyebrow": "Featured Brands",
+    "title": "A restrained wall of European tableware names."
+  },
+  "gallery": {
+    "eyebrow": "Gallery",
+    "title": "Table scenes with the mood of an old European apartment.",
+    "body": "Explore styling references, vintage finds and modern table accents curated for elegant living.",
+    "items": {
+      "heroVintage": "Vintage porcelain table setting",
+      "springTable": "Spring table with luxury tableware",
+      "artPlates": "Decorative art plates",
+      "blueBreakfast": "Blue breakfast porcelain",
+      "lemonTable": "Lemon vintage service",
+      "silverTea": "Silver tea service",
+      "flowerTea": "Floral porcelain tea pair",
+      "glassJug": "Glass jug table detail"
+    }
+  },
+  "beforeAfter": {
+    "eyebrow": "Transformation",
+    "title": "From ordinary table to a composed Casa di Lusso setting.",
+    "before": "Ordinary Table",
+    "after": "Casa di Lusso Styled Table",
+    "beforeText": "Functional pieces without a clear rhythm or emotional focal point.",
+    "afterText": "Layered porcelain, glass, metallic accents and vintage details arranged with editorial restraint."
+  },
+  "stats": {
+    "products": "Products",
+    "vintageCollections": "Vintage Collections",
+    "happyCustomers": "Happy Customers",
+    "countriesServed": "Countries Served"
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "Trusted by people who care how a table feels.",
+    "items": {
+      "madina": {
+        "quote": "Casa di Lusso found a porcelain set that felt collected, not simply purchased. The table changed completely.",
+        "name": "Madina R.",
+        "role": "Private client"
+      },
+      "daniel": {
+        "quote": "The curation is elegant and precise. We received options that matched our interior palette and service style.",
+        "name": "Daniel K.",
+        "role": "Restaurant owner"
+      },
+      "lola": {
+        "quote": "Beautiful vintage pieces, careful packing and a very calm, premium consultation from the first message.",
+        "name": "Lola A.",
+        "role": "Interior stylist"
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Details before your order.",
+    "items": {
+      "delivery": {
+        "question": "Delivery",
+        "answer": "Delivery in Tashkent is arranged individually. Regional and international orders are packed carefully and shipped through trusted carriers."
+      },
+      "payment": {
+        "question": "Payment",
+        "answer": "Orders are confirmed with prepayment. Final payment terms are agreed before dispatch, depending on item availability and route."
+      },
+      "authenticity": {
+        "question": "Authenticity",
+        "answer": "We work with original branded pieces and disclose vintage condition before purchase, including visible marks or age-related details."
+      },
+      "returns": {
+        "question": "Returns",
+        "answer": "Returns are reviewed individually. Fragile and vintage pieces require condition verification before approval."
+      },
+      "packaging": {
+        "question": "Packaging",
+        "answer": "Fragile pieces are wrapped, stabilized and packed for their route, with extra protection for porcelain, crystal and vintage objects."
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact Section",
+    "title": "Let us curate your next table setting.",
+    "body": "Send a reference, ask for availability or request a private selection of modern and vintage tableware."
+  },
+  "footer": {
+    "copyright": "Copyright 2026 Casa di Lusso. Curated luxury tableware and vintage collections."
+  }
+}

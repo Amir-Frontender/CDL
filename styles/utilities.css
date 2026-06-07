@@ -1,0 +1,39 @@
+.section {
+  padding: var(--section-y) var(--page-gutter);
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.section-divider {
+  display: grid;
+  place-items: center;
+  height: 1px;
+  margin-inline: var(--page-gutter);
+  background: var(--line);
+}
+
+.section-divider::after {
+  width: 96px;
+  height: 1px;
+  background: var(--gold);
+  content: "";
+}
+
+@media (max-width: 620px) {
+  .section {
+    padding: 72px 18px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+}

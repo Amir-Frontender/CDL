@@ -1,0 +1,197 @@
+{
+  "metadata": {
+    "title": "Casa di Lusso | Premium idishlar va vintage kolleksiyalar",
+    "description": "Nafis hayot uchun tanlangan premium idishlar, Yevropa farfori, original brendlar va eksklyuziv vintage buyumlar.",
+    "ogAlt": "Casa di Lusso premium dasturxon sahnasi"
+  },
+  "brand": {
+    "name": "Casa di Lusso"
+  },
+  "navigation": {
+    "collection": "Kolleksiya",
+    "why": "Nega biz",
+    "gallery": "Galereya",
+    "contact": "Aloqa"
+  },
+  "actions": {
+    "exploreCollection": "Kolleksiyani ko'rish",
+    "contactUs": "Bog'lanish",
+    "viewDetails": "Batafsil",
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "close": "Yopish",
+    "closeGallery": "Rasmni yopish"
+  },
+  "hero": {
+    "eyebrow": "Premium Tableware & Vintage Collections",
+    "title": "Casa di Lusso",
+    "lead": "Nafis hayot uchun tanlangan premium idishlar va vaqt sinovidan o'tgan vintage buyumlar.",
+    "scroll": "Scroll"
+  },
+  "story": {
+    "eyebrow": "Brend falsafasi",
+    "kicker": "Yevropa dasturxon madaniyati, bosiq va did bilan tanlangan.",
+    "title": "Dasturxon bezash san'at sifatida",
+    "body": "Casa di Lusso zamonaviy servis buyumlari, kolleksion farfor va nafis vintage topilmalarni shaxsiy, uyg'un va esda qoladigan dasturxonlar uchun tanlaydi.",
+    "note": "Biz stol atrofidagi muhitni taklif qilamiz: proporsiya, faktura, meros va uyni jamlangan ko'rsatadigan kichik marosimlar."
+  },
+  "collections": {
+    "eyebrow": "Kolleksiya",
+    "title": "Ifoda, muvozanat va kelib chiqishiga qarab tanlangan buyumlar.",
+    "body": "Zamonaviy shisha buyumlardan noyob farfor servislargacha: har bir tanlov interyer detali sifatida ko'riladi.",
+    "items": {
+      "coloredGlassware": {
+        "title": "Rangli shisha",
+        "meta": "Italyancha kayfiyatdagi stol aksentlari",
+        "price": "650 000 so'mdan"
+      },
+      "restaurantServing": {
+        "title": "Restoran servisi",
+        "meta": "Hospitality uchun professional buyumlar",
+        "price": "480 000 so'mdan"
+      },
+      "statementSetting": {
+        "title": "Aksentli dasturxon",
+        "meta": "Zamonaviy qatlamli servis",
+        "price": "520 000 so'mdan"
+      },
+      "modernCollections": {
+        "title": "Zamonaviy kolleksiyalar",
+        "meta": "Nafis kundalik marosimlar",
+        "price": "390 000 so'mdan"
+      },
+      "heritagePorcelain": {
+        "title": "Tarixli farfor",
+        "meta": "Noyob gulli farfor topilmalar",
+        "price": "narx so'rov bo'yicha"
+      },
+      "collectiblePlates": {
+        "title": "Kolleksion likopchalar",
+        "meta": "Dekorativ Yevropa klassikasi",
+        "price": "narx so'rov bo'yicha"
+      }
+    }
+  },
+  "why": {
+    "eyebrow": "Why Casa di Lusso",
+    "title": "Sokin hashamat va detallarga juda ehtiyotkor yondashuv.",
+    "items": {
+      "curated": {
+        "title": "Ehtiyotkor tanlangan kolleksiyalar",
+        "text": "Har bir buyum proporsiya, holat, pardoz va dasturxondagi ta'siriga qarab tanlanadi."
+      },
+      "vintage": {
+        "title": "Haqiqiy vintage buyumlar",
+        "text": "Tarix, xarakter va haqiqiy servis madaniyatiga ega limitlangan vintage buyumlar."
+      },
+      "brands": {
+        "title": "Premium Yevropa brendlari",
+        "text": "Taniqli Yevropa brendlaridan original idishlar, shisha buyumlar va farfor."
+      },
+      "delivery": {
+        "title": "Dunyo bo'ylab yetkazish",
+        "text": "O'zbekiston, MDH va ayrim xalqaro yo'nalishlarga ehtiyotkor qadoqlash va yetkazish."
+      }
+    }
+  },
+  "trust": {
+    "eyebrow": "Xaridor ishonchi",
+    "title": "Har bir nozik detal jiddiy e'tibor bilan ko'riladi.",
+    "items": {
+      "authenticity": "Asllik kafolati",
+      "packaging": "Xavfsiz qadoqlash",
+      "shipping": "Dunyo bo'ylab yetkazish",
+      "inspection": "Mahsulot tekshiruvi",
+      "service": "Premium mijoz xizmati"
+    }
+  },
+  "brands": {
+    "eyebrow": "Featured Brands",
+    "title": "Yevropa dasturxon brendlarining bosiq devori."
+  },
+  "gallery": {
+    "eyebrow": "Galereya",
+    "title": "Eski Yevropa xonadoni kayfiyatidagi dasturxon sahnalari.",
+    "body": "Nafis hayot uchun tanlangan styling namunalar, vintage topilmalar va zamonaviy aksentlar.",
+    "items": {
+      "heroVintage": "Vintage farfor dasturxon sahnasi",
+      "springTable": "Premium idishlar bilan bahor dasturxoni",
+      "artPlates": "Dekorativ san'at likopchalari",
+      "blueBreakfast": "Ko'k farforli nonushta",
+      "lemonTable": "Limonli vintage servis",
+      "silverTea": "Kumush choy servisi",
+      "flowerTea": "Gulli farfor choy juftligi",
+      "glassJug": "Shisha ko'za bilan dasturxon detali"
+    }
+  },
+  "beforeAfter": {
+    "eyebrow": "O'zgarish",
+    "title": "Oddiy stoldan Casa di Lusso uslubidagi uyg'un dasturxongacha.",
+    "before": "Oddiy stol",
+    "after": "Casa di Lusso uslubidagi stol",
+    "beforeText": "Aniq ritm va hissiy markazsiz funksional buyumlar.",
+    "afterText": "Farfor, shisha, metall aksentlar va vintage detallar tahririy bosiqlik bilan jamlangan."
+  },
+  "stats": {
+    "products": "Mahsulotlar",
+    "vintageCollections": "Vintage kolleksiyalar",
+    "happyCustomers": "Mamnun mijozlar",
+    "countriesServed": "Yetkazilgan davlatlar"
+  },
+  "testimonials": {
+    "eyebrow": "Mijozlar fikri",
+    "title": "Dasturxon hissiyotiga e'tibor beradiganlar bizga ishonadi.",
+    "items": {
+      "madina": {
+        "quote": "Casa di Lusso topgan farfor servis oddiy xarid emas, yig'ilgan kolleksiya kabi sezildi. Dasturxon butunlay o'zgardi.",
+        "name": "Madina R.",
+        "role": "Xususiy mijoz"
+      },
+      "daniel": {
+        "quote": "Tanlov nafis va aniq. Interyer palitrasi va servis uslubimizga mos variantlar oldik.",
+        "name": "Daniel K.",
+        "role": "Restoran egasi"
+      },
+      "lola": {
+        "quote": "Chiroyli vintage buyumlar, ehtiyotkor qadoqlash va birinchi xabardan premium maslahat.",
+        "name": "Lola A.",
+        "role": "Interyer stilisti"
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Buyurtmadan oldingi tafsilotlar.",
+    "items": {
+      "delivery": {
+        "question": "Yetkazish",
+        "answer": "Toshkent bo'yicha yetkazish individual kelishiladi. Hududiy va xalqaro buyurtmalar ehtiyotkor qadoqlanib ishonchli xizmatlar orqali yuboriladi."
+      },
+      "payment": {
+        "question": "To'lov",
+        "answer": "Buyurtma oldindan to'lov bilan tasdiqlanadi. Yakuniy to'lov shartlari mavjudlik va yo'nalishga qarab kelishiladi."
+      },
+      "authenticity": {
+        "question": "Asllik",
+        "answer": "Biz original brend buyumlari bilan ishlaymiz va vintage holatini, jumladan vaqt izlarini, oldindan ko'rsatamiz."
+      },
+      "returns": {
+        "question": "Qaytarish",
+        "answer": "Qaytarish individual ko'rib chiqiladi. Mo'rt va vintage buyumlar uchun holat tekshiruvi talab qilinadi."
+      },
+      "packaging": {
+        "question": "Qadoqlash",
+        "answer": "Mo'rt buyumlar yo'nalishga mos qadoqlanadi: farfor, billur va vintage obyektlar qo'shimcha himoya oladi."
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Aloqa",
+    "title": "Keyingi dasturxoningizni siz uchun jamlaymiz.",
+    "body": "Referens yuboring, mavjudlikni so'rang yoki zamonaviy va vintage idishlar bo'yicha shaxsiy tanlov oling."
+  },
+  "footer": {
+    "copyright": "Copyright 2026 Casa di Lusso. Premium idishlar va vintage kolleksiyalar."
+  }
+}
