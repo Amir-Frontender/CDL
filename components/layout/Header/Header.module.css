@@ -58,6 +58,7 @@
 }
 
 .action {
+  position: relative;
   gap: 9px;
   min-height: 42px;
   padding: 0 16px;
@@ -110,9 +111,9 @@
 
 @media (max-width: 620px) {
   .header {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 10px;
     min-height: 66px;
-    overflow: hidden;
     padding: 12px 16px;
   }
 
@@ -121,15 +122,11 @@
     height: 38px;
   }
 
-  .brand span,
-  .action {
+  .brand span {
     display: none;
   }
 
   .localeSwitcher {
-    position: absolute;
-    top: 13px;
-    right: 16px;
     display: grid;
     grid-template-columns: repeat(3, 30px);
     width: 98px;
@@ -141,5 +138,22 @@
     width: 30px;
     height: 32px;
     font-size: 11px;
+  }
+
+  .action {
+    display: grid;
+    width: 38px;
+    min-height: 38px;
+    padding: 0;
+    place-items: center;
+  }
+
+  .action span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 }

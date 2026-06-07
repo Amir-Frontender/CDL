@@ -35,7 +35,7 @@ export function Header({ locale, t }: HeaderProps) {
         ))}
       </div>
 
-      <a className={styles.action} href={orderHref(locale)} target="_blank" rel="noreferrer">
+      <a className={styles.action} href={orderHref(locale)} target="_blank" rel="noreferrer" aria-label={t.actions.telegram}>
         <Send size={16} />
         <span>{t.actions.telegram}</span>
       </a>

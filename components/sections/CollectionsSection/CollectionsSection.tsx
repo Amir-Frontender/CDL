@@ -21,7 +21,12 @@ export function CollectionsSection({ t }: { t: Messages }) {
             <AnimatedSection className={styles.card} key={item.id}>
               <a href={item.href} target="_blank" rel="noreferrer" aria-label={content.title}>
                 <div className={styles.image}>
-                  <Image src={item.image} alt={content.title} fill sizes="(max-width: 760px) 100vw, 33vw" />
+                  <Image
+                    src={item.image}
+                    alt={content.title}
+                    fill
+                    sizes="(max-width: 620px) calc(100vw - 36px), (max-width: 1080px) 50vw, 33vw"
+                  />
                   <span>{t.actions.viewDetails}</span>
                 </div>
                 <div className={styles.copy}>

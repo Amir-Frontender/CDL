@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "title": "Casa di Lusso | Premium idishlar va vintage kolleksiyalar",
+    "title": "Casa di Lusso | Yuqori sifatli idishlar va vintage kolleksiyalar",
     "description": "Nafis hayot uchun tanlangan premium idishlar, Yevropa farfori, original brendlar va eksklyuziv vintage buyumlar.",
     "ogAlt": "Casa di Lusso premium dasturxon sahnasi"
   },
   "og": {
     "title": "Casa di Lusso",
-    "subtitle": "Premium idishlar va vintage",
+    "subtitle": "Yuqori sifatli idishlar va vintage",
     "tagline": "Nafis hayot uchun tanlangan servis.",
     "alt": "Casa di Lusso premium social preview rasmi"
   },
@@ -31,10 +31,10 @@
     "closeGallery": "Rasmni yopish"
   },
   "hero": {
-    "eyebrow": "Premium Tableware & Vintage Collections",
+    "eyebrow": "Yuqori sifatli idishlar va vintage kolleksiyalar",
     "title": "Casa di Lusso",
     "lead": "Nafis hayot uchun tanlangan premium idishlar va vaqt sinovidan o'tgan vintage buyumlar.",
-    "scroll": "Scroll"
+    "scroll": "Pastga"
   },
   "story": {
     "eyebrow": "Brend falsafasi",
@@ -55,7 +55,7 @@
       },
       "restaurantServing": {
         "title": "Restoran servisi",
-        "meta": "Hospitality uchun professional buyumlar",
+        "meta": "Mehmondo'stlik sohasi uchun professional buyumlar",
         "price": "480 000 so'mdan"
       },
       "statementSetting": {
@@ -81,7 +81,7 @@
     }
   },
   "why": {
-    "eyebrow": "Why Casa di Lusso",
+    "eyebrow": "Nega Casa di Lusso",
     "title": "Sokin hashamat va detallarga juda ehtiyotkor yondashuv.",
     "items": {
       "curated": {
@@ -93,7 +93,7 @@
         "text": "Tarix, xarakter va haqiqiy servis madaniyatiga ega limitlangan vintage buyumlar."
       },
       "brands": {
-        "title": "Premium Yevropa brendlari",
+        "title": "Yuqori darajadagi Yevropa brendlari",
         "text": "Taniqli Yevropa brendlaridan original idishlar, shisha buyumlar va farfor."
       },
       "delivery": {
@@ -110,11 +110,11 @@
       "packaging": "Xavfsiz qadoqlash",
       "shipping": "Dunyo bo'ylab yetkazish",
       "inspection": "Mahsulot tekshiruvi",
-      "service": "Premium mijoz xizmati"
+      "service": "Yuqori darajadagi mijoz xizmati"
     }
   },
   "brands": {
-    "eyebrow": "Featured Brands",
+    "eyebrow": "Tanlangan brendlar",
     "title": "Yevropa dasturxon brendlarining bosiq devori."
   },
   "gallery": {
@@ -123,7 +123,7 @@
     "body": "Nafis hayot uchun tanlangan styling namunalar, vintage topilmalar va zamonaviy aksentlar.",
     "items": {
       "heroVintage": "Vintage farfor dasturxon sahnasi",
-      "springTable": "Premium idishlar bilan bahor dasturxoni",
+      "springTable": "Yuqori sifatli idishlar bilan bahor dasturxoni",
       "artPlates": "Dekorativ san'at likopchalari",
       "blueBreakfast": "Ko'k farforli nonushta",
       "lemonTable": "Limonli vintage servis",
@@ -168,7 +168,7 @@
     }
   },
   "faq": {
-    "eyebrow": "FAQ",
+    "eyebrow": "Savol-javob",
     "title": "Buyurtmadan oldingi tafsilotlar.",
     "items": {
       "delivery": {
@@ -199,10 +199,10 @@
     "body": "Referens yuboring, mavjudlikni so'rang yoki zamonaviy va vintage idishlar bo'yicha shaxsiy tanlov oling."
   },
   "footer": {
-    "copyright": "Copyright 2026 Casa di Lusso. Premium idishlar va vintage kolleksiyalar."
+    "copyright": "© 2026 Casa di Lusso. Yuqori sifatli idishlar va vintage kolleksiyalar."
   },
   "seo": {
-    "premiumCollections": "Premium idishlar kolleksiyalari",
+    "premiumCollections": "Yuqori sifatli idishlar kolleksiyalari",
     "vintageCollections": "Eksklyuziv vintage idishlar"
   }
 }
