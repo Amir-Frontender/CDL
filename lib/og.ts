@@ -10,8 +10,7 @@ export const ogContentType = "image/png";
 export const ogImageAsset = "/images/hero-service.jpg";
 
 export function getLocalizedOgImagePath(locale: Locale) {
-  if (locale === "ru") return "/telegram-preview.jpg";
-  return `/telegram-preview-${locale}.jpg`;
+  return `/cdl-telegram-${locale}-v6.jpg`;
 }
 
 export function getAbsoluteOgImageUrl(locale: Locale) {

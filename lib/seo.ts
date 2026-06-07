@@ -38,7 +38,6 @@ export function buildMetadata(locale: Locale, t: Messages): Metadata {
     openGraph: {
       type: "website",
       locale,
-      url: new URL(`/${locale}`, siteUrl).toString(),
       siteName: t.brand.name,
       title: t.metadata.title,
       description: t.metadata.description,
