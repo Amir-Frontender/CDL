@@ -34,7 +34,7 @@ export function Footer({ locale, t }: FooterProps) {
         <a href={instagram} target="_blank" rel="noreferrer" aria-label={t.actions.instagram}>
           <Camera size={18} />
         </a>
-        <a href={telegramVintage} target="_blank" rel="noreferrer" aria-label="Vintage Telegram">
+        <a href={telegramVintage} target="_blank" rel="noreferrer" aria-label={t.actions.vintageTelegram}>
           <Gem size={18} />
         </a>
         <a href={whatsapp} target="_blank" rel="noreferrer" aria-label={t.actions.whatsapp}>

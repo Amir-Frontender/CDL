@@ -91,14 +91,14 @@ export function buildStructuredData(t: Messages) {
         "@type": "Offer",
         itemOffered: {
           "@type": "Product",
-          name: "Premium tableware collections",
+          name: t.seo.premiumCollections,
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Product",
-          name: "Exclusive vintage tableware",
+          name: t.seo.vintageCollections,
         },
       },
     ],

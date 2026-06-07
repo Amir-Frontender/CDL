@@ -18,6 +18,7 @@
     "contactUs": "Contact Us",
     "viewDetails": "View details",
     "telegram": "Telegram",
+    "vintageTelegram": "Vintage Telegram",
     "instagram": "Instagram",
     "whatsapp": "WhatsApp",
     "close": "Close",
@@ -193,5 +194,9 @@
   },
   "footer": {
     "copyright": "Copyright 2026 Casa di Lusso. Curated luxury tableware and vintage collections."
+  },
+  "seo": {
+    "premiumCollections": "Premium tableware collections",
+    "vintageCollections": "Exclusive vintage tableware"
   }
 }
