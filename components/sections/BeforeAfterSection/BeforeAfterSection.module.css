@@ -63,3 +63,20 @@
     min-height: 430px;
   }
 }
+
+@media (max-width: 620px) {
+  .panel {
+    min-height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .panel div {
+    right: 20px;
+    bottom: 22px;
+    left: 20px;
+  }
+
+  .panel span {
+    font-size: clamp(30px, 10vw, 42px);
+  }
+}

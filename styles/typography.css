@@ -39,12 +39,23 @@ p {
 
 @media (max-width: 620px) {
   h1 {
-    max-width: 8ch;
-    font-size: clamp(58px, 18vw, 82px);
+    max-width: 9ch;
+    font-size: clamp(52px, 15vw, 72px);
+    line-height: 0.92;
   }
 
   h2 {
-    font-size: clamp(36px, 12vw, 54px);
-    line-height: 1;
+    font-size: clamp(31px, 9vw, 42px);
+    line-height: 1.08;
+  }
+
+  h3 {
+    font-size: clamp(22px, 7vw, 28px);
+    line-height: 1.12;
+  }
+
+  p {
+    font-size: 15.5px;
+    line-height: 1.65;
   }
 }

@@ -31,10 +31,10 @@
     "closeGallery": "Закрыть изображение"
   },
   "hero": {
-    "eyebrow": "Premium Tableware & Vintage Collections",
+    "eyebrow": "Премиальная посуда и винтажные коллекции",
     "title": "Casa di Lusso",
     "lead": "Отборная премиальная посуда и винтажные предметы вне времени для элегантной жизни.",
-    "scroll": "Scroll"
+    "scroll": "Листайте"
   },
   "story": {
     "eyebrow": "Философия бренда",
@@ -81,7 +81,7 @@
     }
   },
   "why": {
-    "eyebrow": "Why Casa di Lusso",
+    "eyebrow": "Почему Casa di Lusso",
     "title": "Тихая роскошь и внимательная работа с деталями.",
     "items": {
       "curated": {
@@ -114,7 +114,7 @@
     }
   },
   "brands": {
-    "eyebrow": "Featured Brands",
+    "eyebrow": "Избранные бренды",
     "title": "Сдержанная витрина европейских имен в сервировке."
   },
   "gallery": {
@@ -168,7 +168,7 @@
     }
   },
   "faq": {
-    "eyebrow": "FAQ",
+    "eyebrow": "Вопросы и ответы",
     "title": "Детали перед заказом.",
     "items": {
       "delivery": {
@@ -199,7 +199,7 @@
     "body": "Отправьте референс, уточните наличие или запросите персональную подборку современной и винтажной посуды."
   },
   "footer": {
-    "copyright": "Copyright 2026 Casa di Lusso. Премиальная посуда и винтажные коллекции."
+    "copyright": "© 2026 Casa di Lusso. Премиальная посуда и винтажные коллекции."
   },
   "seo": {
     "premiumCollections": "Премиальные коллекции посуды",

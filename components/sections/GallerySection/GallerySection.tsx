@@ -32,7 +32,7 @@ export function GallerySection({ t }: { t: Messages }) {
                 src={item.src}
                 alt={t.gallery.items[item.id]}
                 fill
-                sizes="(max-width: 760px) 100vw, 25vw"
+                sizes="(max-width: 620px) calc(100vw - 36px), (max-width: 860px) 50vw, 25vw"
               />
             </button>
           </AnimatedSection>
@@ -54,7 +54,7 @@ export function GallerySection({ t }: { t: Messages }) {
               src={galleryItems[lightbox].src}
               alt={t.gallery.items[galleryItems[lightbox].id]}
               fill
-              sizes="100vw"
+              sizes="(max-width: 620px) 100vw, 92vw"
               priority
             />
           </button>

@@ -84,13 +84,17 @@
   .lead {
     width: calc(100vw - 36px);
     max-width: 100%;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
   }
 
   .hero :global(.eyebrow) {
     font-size: 11px;
     letter-spacing: 0.11em;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+  }
+
+  .image img {
+    object-position: 58% center;
   }
 
   .overlay {
