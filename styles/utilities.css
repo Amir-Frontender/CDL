@@ -1,5 +1,6 @@
 .section {
   padding: var(--section-y) var(--page-gutter);
+  scroll-margin-top: 92px;
 }
 
 .eyebrow {
