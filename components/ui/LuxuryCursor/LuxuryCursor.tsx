@@ -33,8 +33,8 @@ export function LuxuryCursor({ labels }: LuxuryCursorProps) {
   const prefersReducedMotion = useReducedMotion();
   const x = useMotionValue(-120);
   const y = useMotionValue(-120);
-  const smoothX = useSpring(x, { stiffness: 300, damping: 34, mass: 0.45 });
-  const smoothY = useSpring(y, { stiffness: 300, damping: 34, mass: 0.45 });
+  const smoothX = useSpring(x, { stiffness: 620, damping: 38, mass: 0.24 });
+  const smoothY = useSpring(y, { stiffness: 620, damping: 38, mass: 0.24 });
   const [enabled, setEnabled] = useState(false);
   const [mode, setMode] = useState<CursorMode>("idle");
   const [label, setLabel] = useState("");
