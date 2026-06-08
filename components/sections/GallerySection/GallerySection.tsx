@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, type WheelEvent } from "react";
+import { useEffect, useRef, useState, type PointerEvent, type WheelEvent } from "react";
 import { X } from "lucide-react";
 import { galleryItems } from "@/data/gallery";
 import type { Messages } from "@/lib/i18n";
@@ -12,6 +12,15 @@ import styles from "./GallerySection.module.css";
 export function GallerySection({ t }: { t: Messages }) {
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [imageScale, setImageScale] = useState(1);
+  const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
+  const stageRef = useRef<HTMLDivElement | null>(null);
+  const dragRef = useRef({
+    active: false,
+    startX: 0,
+    startY: 0,
+    originX: 0,
+    originY: 0,
+  });
 
   useEffect(() => {
     if (lightbox === null) return;
@@ -41,19 +50,83 @@ export function GallerySection({ t }: { t: Messages }) {
     };
   }, [lightbox]);
 
-  function handleLightboxWheel(event: WheelEvent<HTMLDivElement>) {
+  function clampPosition(nextPosition: { x: number; y: number }, scale = imageScale) {
+    const stage = stageRef.current;
+    if (!stage || scale <= 1) {
+      return { x: 0, y: 0 };
+    }
+
+    const maxX = (stage.clientWidth * (scale - 1)) / 2;
+    const maxY = (stage.clientHeight * (scale - 1)) / 2;
+
+    return {
+      x: Math.min(maxX, Math.max(-maxX, nextPosition.x)),
+      y: Math.min(maxY, Math.max(-maxY, nextPosition.y)),
+    };
+  }
+
+  function handleStageWheel(event: WheelEvent<HTMLDivElement>) {
     event.preventDefault();
     event.stopPropagation();
 
     setImageScale((currentScale) => {
       const nextScale = currentScale - event.deltaY * 0.0014;
-      return Math.min(2.6, Math.max(1, Number(nextScale.toFixed(3))));
+      const clampedScale = Math.min(2.6, Math.max(1, Number(nextScale.toFixed(3))));
+      setImagePosition((currentPosition) => clampPosition(currentPosition, clampedScale));
+      return clampedScale;
     });
+  }
+
+  function handleLightboxWheel(event: WheelEvent<HTMLDivElement>) {
+    event.preventDefault();
   }
 
   function openLightbox(index: number) {
     setImageScale(1);
+    setImagePosition({ x: 0, y: 0 });
     setLightbox(index);
+  }
+
+  function closeLightbox() {
+    setLightbox(null);
+  }
+
+  function handlePointerDown(event: PointerEvent<HTMLDivElement>) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (imageScale <= 1) return;
+
+    dragRef.current = {
+      active: true,
+      startX: event.clientX,
+      startY: event.clientY,
+      originX: imagePosition.x,
+      originY: imagePosition.y,
+    };
+
+    event.currentTarget.setPointerCapture(event.pointerId);
+  }
+
+  function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
+    if (!dragRef.current.active) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    const nextPosition = {
+      x: dragRef.current.originX + event.clientX - dragRef.current.startX,
+      y: dragRef.current.originY + event.clientY - dragRef.current.startY,
+    };
+
+    setImagePosition(clampPosition(nextPosition));
+  }
+
+  function handlePointerEnd(event: PointerEvent<HTMLDivElement>) {
+    if (!dragRef.current.active) return;
+
+    dragRef.current.active = false;
+    event.currentTarget.releasePointerCapture(event.pointerId);
   }
 
   return (
@@ -91,22 +164,28 @@ export function GallerySection({ t }: { t: Messages }) {
           role="dialog"
           aria-modal="true"
           aria-label={t.actions.closeGallery}
+          onClick={closeLightbox}
           onWheel={handleLightboxWheel}
         >
           <button
             className={styles.close}
             type="button"
-            onClick={() => setLightbox(null)}
+            onClick={closeLightbox}
             aria-label={t.actions.close}
             data-cursor-label={t.actions.close}
           >
             <X />
           </button>
-          <button
-            className={styles.stage}
-            type="button"
-            onClick={() => setLightbox(null)}
-            aria-label={t.actions.closeGallery}
+          <div
+            ref={stageRef}
+            className={imageScale > 1 ? `${styles.stage} ${styles.zoomed}` : styles.stage}
+            role="presentation"
+            onClick={(event) => event.stopPropagation()}
+            onWheel={handleStageWheel}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerEnd}
+            onPointerCancel={handlePointerEnd}
           >
             <Image
               src={galleryItems[lightbox].src}
@@ -114,9 +193,12 @@ export function GallerySection({ t }: { t: Messages }) {
               fill
               sizes="(max-width: 620px) 100vw, 92vw"
               priority
-              style={{ transform: `scale(${imageScale})` }}
+              draggable={false}
+              style={{
+                transform: `translate3d(${imagePosition.x}px, ${imagePosition.y}px, 0) scale(${imageScale})`,
+              }}
             />
-          </button>
+          </div>
         </div>
       )}
     </section>
