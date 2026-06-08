@@ -153,14 +153,23 @@ export function GallerySection({ t }: { t: Messages }) {
     event.preventDefault();
     event.stopPropagation();
 
+    if (clickTimeoutRef.current) {
+      clearTimeout(clickTimeoutRef.current);
+      clickTimeoutRef.current = null;
+    }
+
     if (dragRef.current.moved) {
       dragRef.current.moved = false;
       return;
     }
 
+    if (event.detail > 1) {
+      return;
+    }
+
     clickTimeoutRef.current = setTimeout(() => {
       closeLightbox();
-    }, 220);
+    }, 320);
   }
 
   function handleStageDoubleClick(event: MouseEvent<HTMLDivElement>) {
