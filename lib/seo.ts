@@ -3,8 +3,15 @@ import type { Locale, Messages } from "@/lib/i18n";
 import { getAbsoluteOgImageUrl, ogSize } from "@/lib/og";
 import { siteUrl } from "@/lib/site";
 
+const openGraphLocales: Record<Locale, string> = {
+  ru: "ru_RU",
+  en: "en_US",
+  uz: "uz_UZ",
+};
+
 export function buildMetadata(locale: Locale, t: Messages): Metadata {
   const ogImageUrl = getAbsoluteOgImageUrl(locale);
+  const localizedUrl = new URL(`/${locale}/`, siteUrl).toString();
 
   return {
     metadataBase: new URL(siteUrl),
@@ -37,7 +44,8 @@ export function buildMetadata(locale: Locale, t: Messages): Metadata {
     },
     openGraph: {
       type: "website",
-      locale,
+      url: localizedUrl,
+      locale: openGraphLocales[locale],
       siteName: t.brand.name,
       title: t.metadata.title,
       description: t.metadata.description,
