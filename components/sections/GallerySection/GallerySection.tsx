@@ -292,13 +292,13 @@ export function GallerySection({ t }: { t: Messages }) {
               .filter(Boolean)
               .join(" ")}
             role="presentation"
-            onClick={handleStageClick}
-            onDoubleClick={handleStageDoubleClick}
-            onWheel={handleStageWheel}
-            onPointerDown={handlePointerDown}
-            onPointerMove={handlePointerMove}
-            onPointerUp={handlePointerEnd}
-            onPointerCancel={handlePointerEnd}
+            onClick={isDesktopViewer ? handleStageClick : (event) => event.stopPropagation()}
+            onDoubleClick={isDesktopViewer ? handleStageDoubleClick : undefined}
+            onWheel={isDesktopViewer ? handleStageWheel : undefined}
+            onPointerDown={isDesktopViewer ? handlePointerDown : undefined}
+            onPointerMove={isDesktopViewer ? handlePointerMove : undefined}
+            onPointerUp={isDesktopViewer ? handlePointerEnd : undefined}
+            onPointerCancel={isDesktopViewer ? handlePointerEnd : undefined}
           >
             <Image
               src={galleryItems[lightbox].src}
