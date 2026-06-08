@@ -63,6 +63,7 @@
   position: relative;
   width: min(1120px, 92vw);
   height: min(760px, 82vh);
+  overflow: hidden;
   border: 0;
   background: transparent;
   cursor: zoom-out;
@@ -70,6 +71,9 @@
 
 .stage img {
   object-fit: contain;
+  transition: transform 0.22s ease;
+  transform-origin: center;
+  will-change: transform;
 }
 
 .close {

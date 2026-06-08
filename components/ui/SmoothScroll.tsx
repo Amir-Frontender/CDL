@@ -38,9 +38,20 @@ export function SmoothScroll() {
     };
 
     const resizeLenis = () => lenis.resize();
+    const handleScrollLock = (event: Event) => {
+      const locked = event instanceof CustomEvent && Boolean(event.detail?.locked);
+
+      if (locked) {
+        lenis.stop();
+        return;
+      }
+
+      lenis.start();
+    };
 
     document.addEventListener("click", handleAnchorClick);
     window.addEventListener("cdl:layout-shift", resizeLenis);
+    window.addEventListener("cdl:scroll-lock", handleScrollLock);
 
     let frame = 0;
     const raf = (time: number) => {
@@ -53,6 +64,7 @@ export function SmoothScroll() {
     return () => {
       document.removeEventListener("click", handleAnchorClick);
       window.removeEventListener("cdl:layout-shift", resizeLenis);
+      window.removeEventListener("cdl:scroll-lock", handleScrollLock);
       cancelAnimationFrame(frame);
       lenis.destroy();
     };
