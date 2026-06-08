@@ -13,6 +13,7 @@ export function GallerySection({ t }: { t: Messages }) {
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [imageScale, setImageScale] = useState(1);
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
+  const [isDesktopViewer, setIsDesktopViewer] = useState(false);
   const stageRef = useRef<HTMLDivElement | null>(null);
   const clickTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dragRef = useRef({
@@ -53,6 +54,21 @@ export function GallerySection({ t }: { t: Messages }) {
   }, [lightbox]);
 
   useEffect(() => {
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+    function syncViewerMode() {
+      setIsDesktopViewer(finePointer.matches);
+    }
+
+    syncViewerMode();
+    finePointer.addEventListener("change", syncViewerMode);
+
+    return () => {
+      finePointer.removeEventListener("change", syncViewerMode);
+    };
+  }, []);
+
+  useEffect(() => {
     return () => {
       if (clickTimeoutRef.current) {
         clearTimeout(clickTimeoutRef.current);
@@ -76,6 +92,8 @@ export function GallerySection({ t }: { t: Messages }) {
   }
 
   function handleStageWheel(event: WheelEvent<HTMLDivElement>) {
+    if (!isDesktopViewer) return;
+
     event.preventDefault();
     event.stopPropagation();
 
@@ -88,6 +106,8 @@ export function GallerySection({ t }: { t: Messages }) {
   }
 
   function handleLightboxWheel(event: WheelEvent<HTMLDivElement>) {
+    if (!isDesktopViewer) return;
+
     event.preventDefault();
   }
 
@@ -107,6 +127,8 @@ export function GallerySection({ t }: { t: Messages }) {
   }
 
   function handlePointerDown(event: PointerEvent<HTMLDivElement>) {
+    if (!isDesktopViewer) return;
+
     event.preventDefault();
     event.stopPropagation();
 
@@ -125,6 +147,7 @@ export function GallerySection({ t }: { t: Messages }) {
   }
 
   function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
+    if (!isDesktopViewer) return;
     if (!dragRef.current.active) return;
 
     event.preventDefault();
@@ -143,6 +166,7 @@ export function GallerySection({ t }: { t: Messages }) {
   }
 
   function handlePointerEnd(event: PointerEvent<HTMLDivElement>) {
+    if (!isDesktopViewer) return;
     if (!dragRef.current.active) return;
 
     dragRef.current.active = false;
@@ -152,6 +176,8 @@ export function GallerySection({ t }: { t: Messages }) {
   function handleStageClick(event: MouseEvent<HTMLDivElement>) {
     event.preventDefault();
     event.stopPropagation();
+
+    if (!isDesktopViewer) return;
 
     if (clickTimeoutRef.current) {
       clearTimeout(clickTimeoutRef.current);
@@ -175,6 +201,8 @@ export function GallerySection({ t }: { t: Messages }) {
   function handleStageDoubleClick(event: MouseEvent<HTMLDivElement>) {
     event.preventDefault();
     event.stopPropagation();
+
+    if (!isDesktopViewer) return;
 
     if (clickTimeoutRef.current) {
       clearTimeout(clickTimeoutRef.current);
@@ -256,7 +284,13 @@ export function GallerySection({ t }: { t: Messages }) {
           </button>
           <div
             ref={stageRef}
-            className={imageScale > 1 ? `${styles.stage} ${styles.zoomed}` : styles.stage}
+            className={[
+              styles.stage,
+              isDesktopViewer ? styles.desktopStage : "",
+              isDesktopViewer && imageScale > 1 ? styles.zoomed : "",
+            ]
+              .filter(Boolean)
+              .join(" ")}
             role="presentation"
             onClick={handleStageClick}
             onDoubleClick={handleStageDoubleClick}
@@ -274,7 +308,9 @@ export function GallerySection({ t }: { t: Messages }) {
               priority
               draggable={false}
               style={{
-                transform: `translate3d(${imagePosition.x}px, ${imagePosition.y}px, 0) scale(${imageScale})`,
+                transform: isDesktopViewer
+                  ? `translate3d(${imagePosition.x}px, ${imagePosition.y}px, 0) scale(${imageScale})`
+                  : undefined,
               }}
             />
           </div>
