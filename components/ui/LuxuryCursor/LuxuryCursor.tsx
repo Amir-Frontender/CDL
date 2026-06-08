@@ -13,6 +13,8 @@ type LuxuryCursorProps = {
 
 const interactiveSelector =
   'a, button, [role="button"], [data-cursor], [data-cursor-label], .swiper, [class*="swiper"]';
+const pointerMoveOptions = { capture: true, passive: true } as const;
+const pointerOptions = { capture: true } as const;
 
 function getCursorMode(element: HTMLElement | null): CursorMode {
   if (!element) return "idle";
@@ -109,16 +111,16 @@ export function LuxuryCursor({ labels }: LuxuryCursorProps) {
       setPressed(false);
     }
 
-    window.addEventListener("pointermove", handlePointerMove, { passive: true });
-    window.addEventListener("pointerdown", handlePointerDown);
-    window.addEventListener("pointerup", handlePointerUp);
+    window.addEventListener("pointermove", handlePointerMove, pointerMoveOptions);
+    window.addEventListener("pointerdown", handlePointerDown, pointerOptions);
+    window.addEventListener("pointerup", handlePointerUp, pointerOptions);
     document.addEventListener("mouseleave", handlePointerLeave);
 
     return () => {
       document.body.classList.remove("luxury-cursor-enabled");
-      window.removeEventListener("pointermove", handlePointerMove);
-      window.removeEventListener("pointerdown", handlePointerDown);
-      window.removeEventListener("pointerup", handlePointerUp);
+      window.removeEventListener("pointermove", handlePointerMove, pointerMoveOptions);
+      window.removeEventListener("pointerdown", handlePointerDown, pointerOptions);
+      window.removeEventListener("pointerup", handlePointerUp, pointerOptions);
       document.removeEventListener("mouseleave", handlePointerLeave);
     };
   }, [enabled, labels.drag, x, y]);
