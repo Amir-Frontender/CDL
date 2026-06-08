@@ -69,6 +69,8 @@ export function LuxuryCursor({ labels }: LuxuryCursorProps) {
   useEffect(() => {
     if (!enabled) return;
 
+    document.body.classList.add("luxury-cursor-enabled");
+
     function handlePointerMove(event: PointerEvent) {
       x.set(event.clientX);
       y.set(event.clientY);
@@ -113,6 +115,7 @@ export function LuxuryCursor({ labels }: LuxuryCursorProps) {
     document.addEventListener("mouseleave", handlePointerLeave);
 
     return () => {
+      document.body.classList.remove("luxury-cursor-enabled");
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("pointerdown", handlePointerDown);
       window.removeEventListener("pointerup", handlePointerUp);

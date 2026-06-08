@@ -47,6 +47,11 @@
   white-space: nowrap;
 }
 
+:global(body.luxury-cursor-enabled),
+:global(body.luxury-cursor-enabled *) {
+  cursor: none !important;
+}
+
 @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
   .cursor {
     display: none;
