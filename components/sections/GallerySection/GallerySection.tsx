@@ -41,6 +41,8 @@ export function GallerySection({ t }: { t: Messages }) {
               className={"tall" in item ? `${styles.tile} ${styles.tall}` : styles.tile}
               type="button"
               onClick={() => setLightbox(index)}
+              data-cursor="media"
+              data-cursor-label={t.cursor.view}
             >
               <Image
                 src={item.src}
@@ -55,7 +57,13 @@ export function GallerySection({ t }: { t: Messages }) {
 
       {lightbox !== null && (
         <div className={styles.lightbox} role="dialog" aria-modal="true" aria-label={t.actions.closeGallery}>
-          <button className={styles.close} type="button" onClick={() => setLightbox(null)} aria-label={t.actions.close}>
+          <button
+            className={styles.close}
+            type="button"
+            onClick={() => setLightbox(null)}
+            aria-label={t.actions.close}
+            data-cursor-label={t.actions.close}
+          >
             <X />
           </button>
           <button

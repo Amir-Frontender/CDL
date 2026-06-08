@@ -14,33 +14,39 @@ type FooterProps = {
 export function Footer({ locale, t }: FooterProps) {
   return (
     <footer className={styles.footer}>
-      <Link className={styles.brand} href={`/${locale}#top`} aria-label={t.brand.name}>
+      <Link className={styles.brand} href={`/${locale}#top`} aria-label={t.brand.name} data-cursor-label={t.cursor.open}>
         <Image src="/images/brand-mark.png" alt="" width={40} height={54} />
         <span>{t.brand.name}</span>
       </Link>
 
       <div className={styles.links}>
         {navigationItems.map((item) => (
-          <Link href={`/${locale}${item.href}`} key={item.id}>
+          <Link href={`/${locale}${item.href}`} key={item.id} data-cursor-label={t.cursor.open}>
             {t.navigation[item.id]}
           </Link>
         ))}
       </div>
 
       <div className={styles.social}>
-        <a href={telegramMain} target="_blank" rel="noreferrer" aria-label={t.actions.telegram}>
+        <a href={telegramMain} target="_blank" rel="noreferrer" aria-label={t.actions.telegram} data-cursor-label={t.cursor.contact}>
           <Send size={18} />
           <span>{t.actions.telegram}</span>
         </a>
-        <a href={instagram} target="_blank" rel="noreferrer" aria-label={t.actions.instagram}>
+        <a href={instagram} target="_blank" rel="noreferrer" aria-label={t.actions.instagram} data-cursor-label={t.cursor.open}>
           <Camera size={18} />
           <span>{t.actions.instagram}</span>
         </a>
-        <a href={telegramVintage} target="_blank" rel="noreferrer" aria-label={t.actions.vintageTelegram}>
+        <a
+          href={telegramVintage}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={t.actions.vintageTelegram}
+          data-cursor-label={t.cursor.contact}
+        >
           <Gem size={18} />
           <span>{t.actions.vintageTelegram}</span>
         </a>
-        <a href={whatsapp} target="_blank" rel="noreferrer" aria-label={t.actions.whatsapp}>
+        <a href={whatsapp} target="_blank" rel="noreferrer" aria-label={t.actions.whatsapp} data-cursor-label={t.cursor.contact}>
           <MessageCircle size={18} />
           <span>{t.actions.whatsapp}</span>
         </a>

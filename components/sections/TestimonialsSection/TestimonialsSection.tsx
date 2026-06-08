@@ -26,6 +26,8 @@ export function TestimonialsSection({ t }: { t: Messages }) {
           slidesPerView={1}
           breakpoints={{ 860: { slidesPerView: 3 } }}
           className={styles.swiper}
+          data-cursor="drag"
+          data-cursor-label={t.cursor.drag}
         >
           {testimonialItems.map((id) => {
             const item = t.testimonials.items[id];

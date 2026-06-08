@@ -31,6 +31,13 @@
     "close": "Yopish",
     "closeGallery": "Rasmni yopish"
   },
+  "cursor": {
+    "view": "Ko'rish",
+    "open": "Ochish",
+    "explore": "Ko'rib chiqish",
+    "contact": "Bog'lanish",
+    "drag": "Surish"
+  },
   "hero": {
     "eyebrow": "Yuqori sifatli idishlar va vintage kolleksiyalar",
     "title": "Casa di Lusso",

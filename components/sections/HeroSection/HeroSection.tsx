@@ -36,11 +36,17 @@ export function HeroSection({ locale, t }: HeroSectionProps) {
         <h1>{t.hero.title}</h1>
         <p className={styles.lead}>{t.hero.lead}</p>
         <div className={styles.actions}>
-          <Button href="#collection">
+          <Button href="#collection" data-cursor-label={t.cursor.explore}>
             {t.actions.exploreCollection}
             <ArrowUpRight size={17} />
           </Button>
-          <Button href={orderHref(locale)} target="_blank" rel="noreferrer" variant="ghost">
+          <Button
+            href={orderHref(locale)}
+            target="_blank"
+            rel="noreferrer"
+            variant="ghost"
+            data-cursor-label={t.cursor.contact}
+          >
             {t.actions.contactUs}
           </Button>
         </div>

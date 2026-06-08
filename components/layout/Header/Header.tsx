@@ -15,22 +15,29 @@ type HeaderProps = {
 export function Header({ locale, t }: HeaderProps) {
   return (
     <header className={styles.header}>
-      <Link className={styles.brand} href={`/${locale}#top`} aria-label={t.brand.name}>
+      <Link className={styles.brand} href={`/${locale}#top`} aria-label={t.brand.name} data-cursor-label={t.cursor.open}>
         <Image src="/images/brand-mark.png" alt="" width={34} height={46} priority />
         <span>{t.brand.name}</span>
       </Link>
 
       <nav className={styles.nav} aria-label="Primary navigation">
         {navigationItems.map((item) => (
-          <Link href={`/${locale}${item.href}`} key={item.id}>
+          <Link href={`/${locale}${item.href}`} key={item.id} data-cursor-label={t.cursor.open}>
             {t.navigation[item.id]}
           </Link>
         ))}
       </nav>
 
-      <LocaleSwitcher locale={locale} />
+      <LocaleSwitcher locale={locale} cursorLabel={t.cursor.open} />
 
-      <a className={styles.action} href={orderHref(locale)} target="_blank" rel="noreferrer" aria-label={t.actions.telegram}>
+      <a
+        className={styles.action}
+        href={orderHref(locale)}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={t.actions.telegram}
+        data-cursor-label={t.cursor.contact}
+      >
         <Send size={16} />
         <span>{t.actions.telegram}</span>
       </a>
