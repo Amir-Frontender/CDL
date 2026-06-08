@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState, type PointerEvent, type WheelEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent, type PointerEvent, type WheelEvent } from "react";
 import { X } from "lucide-react";
 import { galleryItems } from "@/data/gallery";
 import type { Messages } from "@/lib/i18n";
@@ -14,8 +14,10 @@ export function GallerySection({ t }: { t: Messages }) {
   const [imageScale, setImageScale] = useState(1);
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
   const stageRef = useRef<HTMLDivElement | null>(null);
+  const clickTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dragRef = useRef({
     active: false,
+    moved: false,
     startX: 0,
     startY: 0,
     originX: 0,
@@ -49,6 +51,14 @@ export function GallerySection({ t }: { t: Messages }) {
       window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
     };
   }, [lightbox]);
+
+  useEffect(() => {
+    return () => {
+      if (clickTimeoutRef.current) {
+        clearTimeout(clickTimeoutRef.current);
+      }
+    };
+  }, []);
 
   function clampPosition(nextPosition: { x: number; y: number }, scale = imageScale) {
     const stage = stageRef.current;
@@ -88,6 +98,11 @@ export function GallerySection({ t }: { t: Messages }) {
   }
 
   function closeLightbox() {
+    if (clickTimeoutRef.current) {
+      clearTimeout(clickTimeoutRef.current);
+      clickTimeoutRef.current = null;
+    }
+
     setLightbox(null);
   }
 
@@ -99,6 +114,7 @@ export function GallerySection({ t }: { t: Messages }) {
 
     dragRef.current = {
       active: true,
+      moved: false,
       startX: event.clientX,
       startY: event.clientY,
       originX: imagePosition.x,
@@ -118,6 +134,10 @@ export function GallerySection({ t }: { t: Messages }) {
       x: dragRef.current.originX + event.clientX - dragRef.current.startX,
       y: dragRef.current.originY + event.clientY - dragRef.current.startY,
     };
+    dragRef.current.moved =
+      dragRef.current.moved ||
+      Math.abs(event.clientX - dragRef.current.startX) > 4 ||
+      Math.abs(event.clientY - dragRef.current.startY) > 4;
 
     setImagePosition(clampPosition(nextPosition));
   }
@@ -127,6 +147,55 @@ export function GallerySection({ t }: { t: Messages }) {
 
     dragRef.current.active = false;
     event.currentTarget.releasePointerCapture(event.pointerId);
+  }
+
+  function handleStageClick(event: MouseEvent<HTMLDivElement>) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (dragRef.current.moved) {
+      dragRef.current.moved = false;
+      return;
+    }
+
+    clickTimeoutRef.current = setTimeout(() => {
+      closeLightbox();
+    }, 220);
+  }
+
+  function handleStageDoubleClick(event: MouseEvent<HTMLDivElement>) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (clickTimeoutRef.current) {
+      clearTimeout(clickTimeoutRef.current);
+      clickTimeoutRef.current = null;
+    }
+
+    if (imageScale > 1) {
+      setImageScale(1);
+      setImagePosition({ x: 0, y: 0 });
+      return;
+    }
+
+    const stage = stageRef.current;
+    if (!stage) return;
+
+    const rect = stage.getBoundingClientRect();
+    const targetScale = 2.2;
+    const offsetX = event.clientX - rect.left - rect.width / 2;
+    const offsetY = event.clientY - rect.top - rect.height / 2;
+
+    setImageScale(targetScale);
+    setImagePosition(
+      clampPosition(
+        {
+          x: -offsetX * (targetScale - 1),
+          y: -offsetY * (targetScale - 1),
+        },
+        targetScale,
+      ),
+    );
   }
 
   return (
@@ -180,7 +249,8 @@ export function GallerySection({ t }: { t: Messages }) {
             ref={stageRef}
             className={imageScale > 1 ? `${styles.stage} ${styles.zoomed}` : styles.stage}
             role="presentation"
-            onClick={(event) => event.stopPropagation()}
+            onClick={handleStageClick}
+            onDoubleClick={handleStageDoubleClick}
             onWheel={handleStageWheel}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
