@@ -6,11 +6,11 @@ export const ogSize = {
   height: 630,
 } as const;
 
-export const ogContentType = "image/png";
+export const ogContentType = "image/jpeg";
 export const ogImageAsset = "/images/hero-service.jpg";
 
 export function getLocalizedOgImagePath(locale: Locale) {
-  return `/cdl-telegram-${locale}-v7.jpg`;
+  return `/cdl-telegram-${locale}-v8.jpg`;
 }
 
 export function getAbsoluteOgImageUrl(locale: Locale) {
