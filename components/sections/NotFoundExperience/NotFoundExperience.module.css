@@ -1,3 +1,12 @@
+:global(html),
+:global(body) {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: clip;
+  background: #f5efe6;
+}
+
 .shell {
   --background: #f5efe6;
   --text: #0f0e0c;
@@ -11,6 +20,8 @@
   --shadow-lifted: 0 34px 90px rgba(15, 14, 12, 0.16);
   --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
   min-width: 320px;
+  width: 100%;
+  max-width: 100vw;
   min-height: 100vh;
   overflow-x: clip;
   background: var(--background);
@@ -55,7 +66,10 @@
 
 .page {
   --not-found-header-offset: clamp(108px, 7vw, 128px);
+  width: 100%;
+  max-width: 100vw;
   min-height: 100vh;
+  overflow-x: clip;
   background:
     radial-gradient(circle at 16% 18%, rgba(185, 154, 91, 0.12), transparent 28%),
     linear-gradient(90deg, rgba(111, 29, 27, 0.035), transparent 42%, rgba(185, 154, 91, 0.055)),
@@ -68,6 +82,7 @@
   min-height: 100vh;
   padding-top: var(--not-found-header-offset);
   border-bottom: 1px solid var(--line);
+  overflow-x: clip;
 }
 
 .media {
@@ -288,20 +303,44 @@
   }
 
   .media {
-    min-height: 360px;
+    min-height: clamp(300px, 72vw, 340px);
+  }
+
+  .media img {
+    transform: none;
   }
 
   .copy {
-    padding: 54px 18px 70px;
+    padding: 42px 18px 58px;
   }
 
   .copy h1 {
-    font-size: clamp(92px, 32vw, 132px);
+    margin-bottom: 16px;
+    font-size: clamp(82px, 28vw, 112px);
+    line-height: 0.86;
   }
 
-  .copy h2,
+  .copy h2 {
+    margin-bottom: 22px;
+    font-size: clamp(31px, 9vw, 42px);
+    line-height: 1.08;
+  }
+
+  .copy > p:not(.eyebrow) {
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+
   .heading h2 {
-    font-size: clamp(38px, 14vw, 58px);
+    font-size: clamp(31px, 9vw, 42px);
+    line-height: 1.08;
+  }
+
+  .eyebrow,
+  .heading p {
+    margin-bottom: 14px;
+    font-size: 11px;
+    letter-spacing: 0.11em;
   }
 
   .actions {
@@ -310,7 +349,7 @@
   }
 
   .featured {
-    padding: 64px 18px 88px;
+    padding: 64px 18px 78px;
   }
 
   .footerFrame footer {
@@ -319,5 +358,28 @@
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .cardImage {
+    aspect-ratio: 4 / 3.2;
+  }
+
+  .cardCopy {
+    padding: 22px 18px 24px;
+  }
+
+  .cardCopy span {
+    margin-bottom: 14px;
+  }
+
+  .cardCopy h3 {
+    margin-bottom: 10px;
+    font-size: clamp(22px, 7vw, 28px);
+    line-height: 1.12;
+  }
+
+  .cardCopy p {
+    font-size: 15.5px;
+    line-height: 1.65;
   }
 }
