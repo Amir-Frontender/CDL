@@ -19,7 +19,7 @@ export function BeforeAfterSection({ t }: { t: Messages }) {
           </div>
         </AnimatedSection>
         <AnimatedSection className={styles.panel}>
-          <Image src="/images/vintage-green-table.jpg" alt={t.beforeAfter.after} fill sizes="(max-width: 860px) 100vw, 50vw" />
+          <Image src="/images/cdl_table.jpg" alt={t.beforeAfter.after} fill sizes="(max-width: 860px) 100vw, 50vw" />
           <div>
             <span>{t.beforeAfter.after}</span>
             <p>{t.beforeAfter.afterText}</p>
