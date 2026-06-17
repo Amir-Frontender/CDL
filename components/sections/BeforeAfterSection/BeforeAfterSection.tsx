@@ -12,7 +12,7 @@ export function BeforeAfterSection({ t }: { t: Messages }) {
       </AnimatedSection>
       <div className={styles.grid}>
         <AnimatedSection className={styles.panel}>
-          <Image src="/images/tea-set.jpg" alt={t.beforeAfter.before} fill sizes="(max-width: 860px) 100vw, 50vw" />
+          <Image src="/images/custom_table.png" alt={t.beforeAfter.before} fill sizes="(max-width: 860px) 100vw, 50vw" />
           <div>
             <span>{t.beforeAfter.before}</span>
             <p>{t.beforeAfter.beforeText}</p>
