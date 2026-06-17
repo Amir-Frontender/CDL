@@ -16,6 +16,7 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection/T
 import { FAQSection } from "@/components/sections/FAQSection/FAQSection";
 import { ContactSection } from "@/components/sections/ContactSection/ContactSection";
 import { BackToTopButton } from "@/components/ui/BackToTopButton/BackToTopButton";
+import { buildStructuredData } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -30,6 +31,7 @@ export default async function HomePage({ params }: PageProps) {
 
   const activeLocale = locale as Locale;
   const t = getMessages(activeLocale);
+  const structuredData = buildStructuredData(t, activeLocale);
 
   return (
     <>
@@ -52,6 +54,10 @@ export default async function HomePage({ params }: PageProps) {
       </main>
       <Footer locale={activeLocale} t={t} />
       <BackToTopButton label={t.actions.backToTop} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
     </>
   );
 }

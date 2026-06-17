@@ -209,6 +209,40 @@
   "footer": {
     "copyright": "© 2026 Casa di Lusso. Yuqori sifatli idishlar va vintage kolleksiyalar."
   },
+  "notFound": {
+    "eyebrow": "Maxsus tanlov",
+    "title": "Bu kolleksiya topilmadi.",
+    "body": "Siz izlayotgan sahifa boshqa joyga ko'chirilgan, boshqa tanlovga o'tkazilgan yoki endi mavjud bo'lmasligi mumkin.",
+    "invitation": "Keling, buning o'rniga sizga chiroyliroq narsa topishga yordam beramiz.",
+    "imageAlt": "Casa di Lusso tomonidan nafis farfor dasturxon bezagi",
+    "actions": {
+      "explore": "Kolleksiyalarni ko'rish",
+      "home": "Bosh sahifaga",
+      "contact": "Bog'lanish"
+    },
+    "featured": {
+      "eyebrow": "Tanlangan kolleksiyalar",
+      "title": "Tanlovni sokin va nafis ritmda davom ettiring.",
+      "items": {
+        "modern": {
+          "title": "Zamonaviy kolleksiya",
+          "text": "Toza shakllar, qatlamli fakturalar va kundalik nafis marosimlar uchun idishlar."
+        },
+        "vintage": {
+          "title": "Vintage kolleksiya",
+          "text": "Tarix, xarakter va Yevropa bosiqligiga ega farfor hamda servis buyumlari."
+        },
+        "exclusive": {
+          "title": "Eksklyuziv buyumlar",
+          "text": "Ifoda, kelib chiqish va kolleksion qiymat uchun tanlangan noyob aksentlar."
+        },
+        "newArrivals": {
+          "title": "Yangi kelganlar",
+          "text": "Nafis uylar uchun yangi tanlangan servislar va mavsumiy buyumlar."
+        }
+      }
+    }
+  },
   "seo": {
     "premiumCollections": "Yuqori sifatli idishlar kolleksiyalari",
     "vintageCollections": "Eksklyuziv vintage idishlar"

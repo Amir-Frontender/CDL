@@ -88,38 +88,65 @@ export function buildMetadata(locale: Locale, t: Messages): Metadata {
   };
 }
 
-export function buildStructuredData(t: Messages) {
+export function buildStructuredData(t: Messages, locale: Locale) {
+  const localizedUrl = new URL(`/${locale}/`, siteUrl).toString();
+  const logoUrl = new URL("/images/logo.png", siteUrl).toString();
+  const imageUrl = getAbsoluteOgImageUrl(locale);
+
   return {
     "@context": "https://schema.org",
-    "@type": "Store",
-    name: t.brand.name,
-    url: siteUrl,
-    image: getAbsoluteOgImageUrl("ru"),
-    description: t.metadata.description,
-    brand: {
-      "@type": "Brand",
-      name: t.brand.name,
-    },
-    sameAs: [
-      "https://t.me/casadilusso_uzb",
-      "https://t.me/casadilussovintage",
-      "https://www.instagram.com/casadilusso.uzb/",
-    ],
-    areaServed: ["Uzbekistan", "CIS", "Worldwide"],
-    makesOffer: [
+    "@graph": [
       {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Product",
-          name: t.seo.premiumCollections,
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: t.brand.name,
+        url: siteUrl,
+        logo: logoUrl,
+        image: imageUrl,
+        sameAs: [
+          "https://t.me/casadilusso_uzb",
+          "https://t.me/casadilussovintage",
+          "https://www.instagram.com/casadilusso.uzb/",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        name: t.brand.name,
+        url: siteUrl,
+        inLanguage: locale,
+        publisher: {
+          "@id": `${siteUrl}/#organization`,
         },
       },
       {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Product",
-          name: t.seo.vintageCollections,
+        "@type": "Store",
+        "@id": `${localizedUrl}#store`,
+        name: t.brand.name,
+        url: localizedUrl,
+        image: imageUrl,
+        description: t.metadata.description,
+        brand: {
+          "@type": "Brand",
+          name: t.brand.name,
         },
+        areaServed: ["Uzbekistan", "CIS", "Worldwide"],
+        makesOffer: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Product",
+              name: t.seo.premiumCollections,
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Product",
+              name: t.seo.vintageCollections,
+            },
+          },
+        ],
       },
     ],
   };
