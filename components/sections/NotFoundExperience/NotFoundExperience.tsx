@@ -8,6 +8,8 @@ import { Header } from "@/components/layout/Header/Header";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { Button } from "@/components/ui/Button/Button";
 import { AnimatedSection } from "@/components/ui/AnimatedSection/AnimatedSection";
+import { SmoothScroll } from "@/components/ui/SmoothScroll";
+import { LuxuryCursor } from "@/components/ui/LuxuryCursor/LuxuryCursor";
 import { getMessages, isLocale, type Locale } from "@/lib/i18n";
 import { orderHref } from "@/lib/links";
 import styles from "./NotFoundExperience.module.css";
@@ -36,7 +38,12 @@ function getLocaleFromPathname(pathname: string, fallbackLocale: Locale): Locale
   return isLocale(candidate) ? candidate : fallbackLocale;
 }
 
-export function NotFoundExperience({ locale: fallbackLocale }: { locale: Locale }) {
+type NotFoundExperienceProps = {
+  locale: Locale;
+  includeCursor?: boolean;
+};
+
+export function NotFoundExperience({ locale: fallbackLocale, includeCursor = false }: NotFoundExperienceProps) {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname, fallbackLocale);
   const t = getMessages(locale);
@@ -46,6 +53,8 @@ export function NotFoundExperience({ locale: fallbackLocale }: { locale: Locale 
 
   return (
     <div className={styles.shell}>
+      <SmoothScroll />
+      {includeCursor ? <LuxuryCursor labels={t.cursor} /> : null}
       <Header locale={locale} t={t} />
       <main className={styles.page}>
         <section className={styles.hero} aria-labelledby="not-found-title">
@@ -116,7 +125,9 @@ export function NotFoundExperience({ locale: fallbackLocale }: { locale: Locale 
           </div>
         </section>
       </main>
-      <Footer locale={locale} t={t} />
+      <div className={styles.footerFrame}>
+        <Footer locale={locale} t={t} />
+      </div>
     </div>
   );
 }

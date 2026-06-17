@@ -54,6 +54,7 @@
 }
 
 .page {
+  --not-found-header-offset: clamp(108px, 7vw, 128px);
   min-height: 100vh;
   background:
     radial-gradient(circle at 16% 18%, rgba(185, 154, 91, 0.12), transparent 28%),
@@ -64,13 +65,14 @@
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  min-height: calc(100vh - 86px);
+  min-height: 100vh;
+  padding-top: var(--not-found-header-offset);
   border-bottom: 1px solid var(--line);
 }
 
 .media {
   position: relative;
-  min-height: 640px;
+  min-height: calc(100vh - var(--not-found-header-offset));
   overflow: hidden;
   background: #ddd2c5;
 }
@@ -95,7 +97,7 @@
   flex-direction: column;
   justify-content: center;
   max-width: 760px;
-  padding: clamp(64px, 8vw, 132px) clamp(24px, 6vw, 96px);
+  padding: clamp(54px, 7vw, 112px) clamp(24px, 6vw, 96px);
 }
 
 .eyebrow,
@@ -139,8 +141,27 @@
   margin-top: 30px;
 }
 
+.actions a,
+.card a {
+  cursor: inherit;
+}
+
 .featured {
   padding: clamp(72px, 9vw, 140px) clamp(18px, 5vw, 74px);
+}
+
+.footerFrame {
+  background: var(--ivory);
+}
+
+.footerFrame footer {
+  align-items: start;
+  padding-top: clamp(46px, 4.6vw, 72px);
+  padding-bottom: clamp(40px, 4vw, 64px);
+}
+
+.footerFrame footer > div:last-of-type {
+  margin-top: 14px;
 }
 
 .heading {
@@ -248,7 +269,7 @@
   }
 
   .media {
-    min-height: 440px;
+    min-height: 520px;
   }
 
   .grid {
@@ -257,8 +278,13 @@
 }
 
 @media (max-width: 680px) {
+  .page {
+    --not-found-header-offset: 82px;
+  }
+
   .hero {
     min-height: 0;
+    padding-top: var(--not-found-header-offset);
   }
 
   .media {
@@ -285,6 +311,10 @@
 
   .featured {
     padding: 64px 18px 88px;
+  }
+
+  .footerFrame footer {
+    padding-top: 44px;
   }
 
   .grid {

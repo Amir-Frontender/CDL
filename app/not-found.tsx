@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function GlobalNotFound() {
-  return <NotFoundExperience locale={defaultLocale} />;
+  return <NotFoundExperience locale={defaultLocale} includeCursor />;
 }
