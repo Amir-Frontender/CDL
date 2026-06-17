@@ -45,7 +45,7 @@ export function NotFoundExperience({ locale: fallbackLocale }: { locale: Locale 
   const contactHref = orderHref(locale);
 
   return (
-    <>
+    <div className={styles.shell}>
       <Header locale={locale} t={t} />
       <main className={styles.page}>
         <section className={styles.hero} aria-labelledby="not-found-title">
@@ -117,6 +117,6 @@ export function NotFoundExperience({ locale: fallbackLocale }: { locale: Locale 
         </section>
       </main>
       <Footer locale={locale} t={t} />
-    </>
+    </div>
   );
 }

@@ -1,3 +1,58 @@
+.shell {
+  --background: #f5efe6;
+  --text: #0f0e0c;
+  --gold: #b99a5b;
+  --burgundy: #6f1d1b;
+  --gray: #7a7a7a;
+  --border: rgba(15, 14, 12, 0.08);
+  --ivory: #fffaf2;
+  --line: rgba(15, 14, 12, 0.13);
+  --soft-line: rgba(185, 154, 91, 0.28);
+  --shadow-lifted: 0 34px 90px rgba(15, 14, 12, 0.16);
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--background);
+  color: var(--text);
+  font-family: Inter, Manrope, Arial, sans-serif;
+}
+
+.shell *,
+.shell *::before,
+.shell *::after {
+  box-sizing: border-box;
+}
+
+.shell a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.shell button,
+.shell a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shell h1,
+.shell h2,
+.shell h3,
+.shell p {
+  margin-top: 0;
+}
+
+.shell h1,
+.shell h2,
+.shell h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.shell img {
+  max-width: 100%;
+}
+
 .page {
   min-height: 100vh;
   background:
@@ -56,7 +111,7 @@
 .copy h1 {
   margin: 0 0 18px;
   color: var(--gold);
-  font-family: var(--font-playfair), "Playfair Display", serif;
+  font-family: var(--font-display);
   font-size: clamp(96px, 14vw, 220px);
   font-weight: 600;
   line-height: 0.82;
