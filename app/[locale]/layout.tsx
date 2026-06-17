@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { inter, playfair } from "@/app/fonts";
 import "@/app/globals.css";
 import { LuxuryCursor } from "@/components/ui/LuxuryCursor/LuxuryCursor";
-import { buildMetadata, buildStructuredData } from "@/lib/seo";
+import { buildMetadata } from "@/lib/seo";
 import { getMessages, isLocale, locales, type Locale } from "@/lib/i18n";
 
 type LocaleLayoutProps = {
@@ -34,17 +34,12 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   }
 
   const t = getMessages(locale as Locale);
-  const structuredData = buildStructuredData(t);
 
   return (
     <html lang={locale} className={`${inter.variable} ${playfair.variable}`}>
       <body>
         <LuxuryCursor labels={t.cursor} />
         {children}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
       </body>
     </html>
   );

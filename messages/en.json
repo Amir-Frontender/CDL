@@ -209,6 +209,40 @@
   "footer": {
     "copyright": "Copyright 2026 Casa di Lusso. Curated luxury tableware and vintage collections."
   },
+  "notFound": {
+    "eyebrow": "Private Selection",
+    "title": "This collection could not be found.",
+    "body": "The page you are looking for may have moved, been curated elsewhere, or no longer exists.",
+    "invitation": "Let us help you discover something beautiful instead.",
+    "imageAlt": "Elegant porcelain table setting by Casa di Lusso",
+    "actions": {
+      "explore": "Explore Collections",
+      "home": "Return Home",
+      "contact": "Contact Us"
+    },
+    "featured": {
+      "eyebrow": "Featured Collections",
+      "title": "Continue with a quieter kind of discovery.",
+      "items": {
+        "modern": {
+          "title": "Modern Collection",
+          "text": "Clean forms, layered textures and tableware for refined daily rituals."
+        },
+        "vintage": {
+          "title": "Vintage Collection",
+          "text": "Porcelain and table pieces with history, character and European restraint."
+        },
+        "exclusive": {
+          "title": "Exclusive Pieces",
+          "text": "Rare accents selected for presence, provenance and collector appeal."
+        },
+        "newArrivals": {
+          "title": "New Arrivals",
+          "text": "Freshly curated settings and seasonal pieces for elegant homes."
+        }
+      }
+    }
+  },
   "seo": {
     "premiumCollections": "Premium tableware collections",
     "vintageCollections": "Exclusive vintage tableware"
