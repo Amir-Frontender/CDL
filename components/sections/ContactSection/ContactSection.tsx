@@ -1,5 +1,5 @@
-import { Camera, MessageCircle, Send } from "lucide-react";
-import { instagram, telegramMain, whatsapp } from "@/lib/links";
+import { Camera, Mail, MessageCircle, Send } from "lucide-react";
+import { instagram, supportEmail, supportEmailHref, telegramMain, whatsapp } from "@/lib/links";
 import type { Messages } from "@/lib/i18n";
 import { AnimatedSection } from "@/components/ui/AnimatedSection/AnimatedSection";
 import styles from "./ContactSection.module.css";
@@ -23,6 +23,10 @@ export function ContactSection({ t }: { t: Messages }) {
           <a href={whatsapp} target="_blank" rel="noreferrer">
             <MessageCircle />
             {t.actions.whatsapp}
+          </a>
+          <a href={supportEmailHref}>
+            <Mail />
+            {supportEmail}
           </a>
         </div>
       </AnimatedSection>

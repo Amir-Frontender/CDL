@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Camera, Gem, MessageCircle, Send } from "lucide-react";
+import { Camera, Gem, Mail, MessageCircle, Send } from "lucide-react";
 import { navigationItems } from "@/data/navigation";
 import type { Locale, Messages } from "@/lib/i18n";
-import { instagram, telegramMain, telegramVintage, whatsapp } from "@/lib/links";
+import { instagram, supportEmail, supportEmailHref, telegramMain, telegramVintage, whatsapp } from "@/lib/links";
 import styles from "./Footer.module.css";
 
 type FooterProps = {
@@ -49,6 +49,10 @@ export function Footer({ locale, t }: FooterProps) {
         <a href={whatsapp} target="_blank" rel="noreferrer" aria-label={t.actions.whatsapp} data-cursor-label={t.cursor.contact}>
           <MessageCircle size={18} />
           <span>{t.actions.whatsapp}</span>
+        </a>
+        <a href={supportEmailHref} aria-label={supportEmail} data-cursor-label={t.cursor.contact}>
+          <Mail size={18} />
+          <span>{t.actions.email}</span>
         </a>
       </div>
 
