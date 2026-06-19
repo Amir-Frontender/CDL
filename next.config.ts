@@ -3,6 +3,15 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   devIndicators: false,
   trailingSlash: true,
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/ru/",
+        permanent: false,
+      },
+    ];
+  },
   async headers() {
     return [
       {
