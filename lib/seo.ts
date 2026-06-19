@@ -73,6 +73,7 @@ export function buildMetadata(locale: Locale, t: Messages): Metadata {
     },
     other: {
       "image_src": ogImageUrl,
+      "mailru-domain": "ffxviVrVpQp0ARgF",
       "twitter:image:src": ogImageUrl,
     },
     robots: {
