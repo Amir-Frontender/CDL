@@ -1,1 +1,1 @@
-export const siteUrl = "https://cdl-seven.vercel.app";
+export const siteUrl = "https://casadilusso.uz";

@@ -35,11 +35,11 @@ export function buildMetadata(locale: Locale, t: Messages): Metadata {
     creator: t.brand.name,
     publisher: t.brand.name,
     alternates: {
-      canonical: `/${locale}`,
+      canonical: `/${locale}/`,
       languages: {
-        ru: "/ru",
-        en: "/en",
-        uz: "/uz",
+        ru: "/ru/",
+        en: "/en/",
+        uz: "/uz/",
       },
     },
     openGraph: {
@@ -131,22 +131,51 @@ export function buildStructuredData(t: Messages, locale: Locale) {
           name: t.brand.name,
         },
         areaServed: ["Uzbekistan", "CIS", "Worldwide"],
-        makesOffer: [
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Product",
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: t.collections.eyebrow,
+          itemListElement: [
+            {
+              "@type": "OfferCatalog",
               name: t.seo.premiumCollections,
             },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Product",
+            {
+              "@type": "OfferCatalog",
               name: t.seo.vintageCollections,
             },
-          },
-        ],
+          ],
+        },
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": `${localizedUrl}#collection-page`,
+        name: t.metadata.title,
+        url: localizedUrl,
+        image: imageUrl,
+        description: t.metadata.description,
+        inLanguage: locale,
+        isPartOf: {
+          "@id": `${siteUrl}/#website`,
+        },
+        about: {
+          "@id": `${localizedUrl}#store`,
+        },
+        mainEntity: {
+          "@type": "ItemList",
+          name: t.collections.title,
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: t.seo.premiumCollections,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: t.seo.vintageCollections,
+            },
+          ],
+        },
       },
     ],
   };

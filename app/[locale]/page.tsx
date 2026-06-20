@@ -56,7 +56,7 @@ export default async function HomePage({ params }: PageProps) {
       <BackToTopButton label={t.actions.backToTop} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
       />
     </>
   );
